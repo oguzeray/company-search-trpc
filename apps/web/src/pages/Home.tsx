@@ -2,7 +2,11 @@ import { Suspense } from "react";
 import { trpc } from "../utils/trpc";
 
 const Home = () => {
-  const { data } = trpc.company.getCompanies.useQuery({ name: "asdasdqsda" });
+  const { data } = trpc.company.getCompanies.useQuery({
+    name: "Ali",
+    surname: "Veli",
+    school: { name: "vas", year: 2 },
+  });
 
   return (
     <Suspense fallback={<div>LOADing</div>}>
