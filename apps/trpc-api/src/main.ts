@@ -6,19 +6,21 @@ import { appRouter } from "./router";
 
 const app = fastify({ maxParamLength: 5000 });
 
-void app.register(cors, { origin: "*" });
-
-void app.register(fastifyTRPCPlugin, {
-  prefix: "/trpc",
-  trpcOptions: { router: appRouter },
-});
-
-void (async () => {
+async function bootstrap(): Promise<void> {
   try {
+    await app.register(cors, { origin: "*" });
+
+    await app.register(fastifyTRPCPlugin, {
+      prefix: "/trpc",
+      trpcOptions: { router: appRouter },
+    });
+
     const address = await app.listen({ port: 5000 });
     console.log("Trpc api is running on: ", address);
   } catch (err) {
     app.log.error(err);
     process.exit(1);
   }
-})();
+}
+
+void bootstrap();
