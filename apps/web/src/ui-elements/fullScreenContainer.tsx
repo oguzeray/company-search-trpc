@@ -6,7 +6,7 @@ interface FullScreenContainerProps {
 
 const FullScreenContainer = ({ children }: FullScreenContainerProps) => {
   return (
-    <div className="w-screen min-h-screen bg-gray-700 pt-12 sm:pt-24">
+    <div className="min-h-screen w-screen bg-gray-700 pt-12 sm:pt-24">
       {children}
     </div>
   );

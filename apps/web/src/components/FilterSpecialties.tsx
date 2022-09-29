@@ -1,7 +1,7 @@
 import { trpc } from "../utils/trpc";
 import CheckboxUI from "../ui-elements/checkbox";
 import { ChangeEvent } from "react";
-import { Specialty } from "../utils/types";
+import { Specialty } from "../utils/resolver-types";
 
 interface FilterSpecialtiesProps {
   selectedSpecialties: Specialty[];

@@ -9,7 +9,7 @@ export class CompanyFilter {
 
   applyNameFilter(searchText: string) {
     this.companies = this.companies.filter((company) =>
-      company.name.includes(searchText)
+      company.name.toLowerCase().includes(searchText.toLowerCase())
     );
   }
 

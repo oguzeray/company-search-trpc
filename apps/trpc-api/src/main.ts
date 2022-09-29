@@ -17,6 +17,7 @@ async function bootstrap(): Promise<void> {
     const address = await app.listen({ port: 5000 });
     console.log("Trpc api is running on: ", address);
   } catch (err) {
+    console.error(err);
     app.log.error(err);
     process.exit(1);
   }

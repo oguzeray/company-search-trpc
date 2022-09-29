@@ -1,6 +1,6 @@
 import CompanyCardUI from "../ui-elements/companyCard";
 import { trpc } from "../utils/trpc";
-import { FilterCompanyInput } from "../utils/types";
+import { FilterCompanyInput } from "../utils/resolver-types";
 
 interface FilteredCompaniesProps {
   input: FilterCompanyInput;

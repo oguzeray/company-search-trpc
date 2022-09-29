@@ -5,15 +5,15 @@ const SearchBarUI = (inputProps: InputHTMLAttributes<HTMLInputElement>) => {
     <div className="container mx-auto max-w-4xl px-4">
       <label
         htmlFor="default-search"
-        className="mb-2 text-sm font-medium text-gray-900 sr-only"
+        className="sr-only mb-2 text-sm font-medium text-gray-900"
       >
         Search
       </label>
       <div className="relative">
-        <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <svg
             aria-hidden="true"
-            className="w-5 h-5 text-gray-500"
+            className="h-5 w-5 text-gray-500"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ const SearchBarUI = (inputProps: InputHTMLAttributes<HTMLInputElement>) => {
         <input
           type="search"
           id="default-search"
-          className="block p-4 pl-10 w-full text-sm text-gray-400 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 pl-10 text-sm text-gray-400 focus:border-blue-500 focus:ring-blue-500"
           placeholder="Search Mockups, Logos..."
           required
           {...inputProps}

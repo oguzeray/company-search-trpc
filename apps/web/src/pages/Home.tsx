@@ -3,7 +3,7 @@ import SearchBar from "../components/SearchBar";
 import Title from "../ui-elements/title";
 import { useState } from "react";
 import FilterSpecialties from "../components/FilterSpecialties";
-import { Specialty } from "../utils/types";
+import { Specialty } from "../utils/resolver-types";
 import FilteredCompanies from "../components/FilteredCompanies";
 
 const Home = () => {

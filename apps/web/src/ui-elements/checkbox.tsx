@@ -12,7 +12,7 @@ const CheckboxUI = ({
       <input
         id={`${label}-checkbox`}
         type="checkbox"
-        className="w-6 h-6 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
+        className="h-6 w-6 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
         {...inputProps}
       />
       <label
