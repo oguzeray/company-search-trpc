@@ -4,17 +4,12 @@ import Title from "../ui-elements/title";
 import { useState } from "react";
 import FilterSpecialties from "../components/FilterSpecialties";
 import { Specialty } from "../utils/types";
-
-import { trpc } from "../utils/trpc";
+import FilteredCompanies from "../components/FilteredCompanies";
 
 const Home = () => {
-  const [, setSearchText] = useState<string>("");
+  const [searchText, setSearchText] = useState<string>("");
   const [selectedSpecialtiesToFilter, setSelectedSpecialtiesToFilter] =
     useState<Specialty[]>([]);
-  const { data } = trpc.company.getCompanies.useQuery({
-    count: 4,
-    filter: { name: "ara", specialties: ["Balcony", "Debris Removal"] },
-  });
 
   const handleSearch = (text: string) => setSearchText(text);
 
@@ -30,7 +25,15 @@ const Home = () => {
         selectedSpecialties={selectedSpecialtiesToFilter}
         onChange={handleFilterSpecialty}
       />
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <FilteredCompanies
+        input={{
+          count: 20,
+          filter: {
+            name: searchText,
+            specialties: selectedSpecialtiesToFilter,
+          },
+        }}
+      />
     </FullScreenContainer>
   );
 };

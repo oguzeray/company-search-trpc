@@ -13,9 +13,7 @@ export class CompanyFilter {
     );
   }
 
-  applySpecialtyFilter(
-    specialtyToFilterBy: typeof this.companies[number]["specialties"][number]
-  ) {
+  applySpecialtyFilter(specialtyToFilterBy: Company["specialties"][number]) {
     this.companies = this.companies.filter((company) =>
       company.specialties.includes(specialtyToFilterBy)
     );

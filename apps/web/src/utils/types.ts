@@ -1,5 +1,5 @@
-import { inferProcedureOutput } from "@trpc/server";
-import { AppRouter } from "@monorepo/trpc-api";
+import type { inferProcedureInput, inferProcedureOutput } from "@trpc/server";
+import type { AppRouter } from "@monorepo/trpc-api";
 
 export type Specialty = inferProcedureOutput<
   AppRouter["company"]["getCompanySpecialties"]
@@ -8,3 +8,7 @@ export type Specialty = inferProcedureOutput<
 export type Company = inferProcedureOutput<
   AppRouter["company"]["getCompanies"]
 >[number];
+
+export type FilterCompanyInput = inferProcedureInput<
+  AppRouter["company"]["getCompanies"]
+>;
